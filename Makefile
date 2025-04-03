@@ -1,8 +1,8 @@
 BUILDDIR=build
-LATEXMK=latexmk
+LATEXMK=latexmk -lualatex -shell-escape -f
 INKSCAPE=NO_AT_BRIDGE=1 dbus-run-session inkscape
 FIGDIR=assets/figures
-DRAWIO=drawio-cli
+DRAWIO=drawio
 OUT=report
 
 SVGS=$(wildcard $(FIGDIR)/*.svg)
@@ -35,7 +35,7 @@ $(FIGS_PY): $(BUILDDIR)/%.py.pdf: %.py | dirs
 
 $(FIGS_DIO): $(BUILDDIR)/%.drawio.pdf: %.drawio | dirs
 	@printf "$(BLUE)Converting drawio diagram '$<' to '$@'$(RESET)\n"
-	$(DRAWIO) --crop --export --format pdf --output $@ $< --disable-gpu --headless --no-sandbox
+	$(DRAWIO) --crop --export --format pdf --output $@ $<
 
 $(FIGS_PDF): $(BUILDDIR)/%.pdf: %.pdf | dirs
 	cp $< $@
