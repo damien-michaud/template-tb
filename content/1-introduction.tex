@@ -1,29 +1,37 @@
 \chapter{Introduction}
 
-L'introduction est une section \emph{obligatoire} dans un rapport technique. Elle contient généralement au moins quatre paragraphes répondant aux questions suivantes: quel est le problème à résoudre ? Pourquoi y a-t-il un problème ? Quelle est la solution envisagée ? Pourquoi est-ce que la solution envisagée est meilleure que l'état de l'art ?
-
-En bref, on vous demande d'introduire votre travail, l'idée de départ et les objectifs attendus. Le lecteur qui découvrirait votre projet au travers de cette introduction devrait ainsi être capable d'en comprendre le cadre, l'idée générale et les aboutissants du projet.
-
 \section{Contexte}
 
-Les QCM (Quartz Crystal Microbalance) sont des capteurs de masse extrêmement sensibles, 
-utilisés pour mesurer des variations de masse à l'échelle nanogramme. 
-Ce type de capteur fonctionne en exitant le quarz a diffetrente frequances, 
-annalysant les réponse du quarz pour en déduir les variations de fréquences de raisonnances.
-La fréquence de raisonnance varie en fonction de la masse adsorbée à sa surface. 
-Cette technologie est utilisée dans divers domaines tels que la biologie, 
+Les QCM (Quartz Crystal Microbalance) sont des capteurs de masse extrêmement sensibles,
+utilisés pour mesurer des variations de masse à l'échelle nanogramme \cite{WANG2024109967}.
+Ce type de capteur fonctionne en excitant le quartz à différentes fréquences,
+en analysant les réponses du quartz pour en déduire les variations de fréquence de résonance.
+La fréquence de résonance varie en fonction de la masse adsorbée à sa surface.
+Cette technologie est utilisée dans divers domaines tels que la biologie,
 la chimie et les sciences des matériaux.
 
 \section{Problématique}
-Les microbalances à cristal de quartz (QCM) sont largement reconnues comme des capteurs de masse extrêmement sensibles, capables de détecter des variations de l'ordre du nanogramme. Cependant, l'interaction entre le matériau en contact et le cristal de quartz va bien au-delà de la simple relation entre la masse et la fréquence de résonance. Les modifications de l'amplitude et de la largeur de bande du signal de résonance suggèrent la possibilité de mesurer d'autres propriétés des matériaux.
+Les microbalances à cristal de quartz (QCM) sont largement reconnues comme des capteurs de masse extrêmement sensibles, 
+capables de détecter des variations de l'ordre du nanogramme. Cependant, 
+l'interaction entre le matériau en contact et le cristal de quartz va bien au-delà de la simple relation entre la masse et la fréquence de résonance. 
+Les modifications de l'amplitude et de la largeur de bande du signal de résonance suggèrent la possibilité de mesurer d'autres propriétés des matériaux.
 
-La problématique vise donc à explorer dans quelle mesure la QCM peut être utilisée comme un outil fiable et précis pour la quantification de ces propriétés physiques des matériaux, notamment la viscosité, l'élasticité et la densité, particulièrement pour de faibles volumes de liquides. Quels sont les modèles théoriques et les méthodes d'analyse de données nécessaires pour extraire ces grandeurs avec précision à partir des signaux QCM ? Quelles sont les limites de cette technique en termes de gamme de mesure et de sensibilité pour ces propriétés spécifiques ?
+La problématique vise donc à explorer dans quelle mesure la QCM peut être utilisée comme un outil fiable et précis pour la quantification de ces propriétés physiques des matériaux, 
+notamment la viscosité, l'élasticité et la densité, 
+particulièrement pour de faibles volumes de liquides. 
+Quels sont les modèles théoriques et les méthodes d'analyse de données nécessaires pour extraire ces grandeurs avec précision à partir des signaux QCM ? 
+Quelles sont les limites de cette technique en termes de gamme de mesure et de sensibilité pour ces propriétés spécifiques ?
 
-L'enjeu est de déterminer si la QCM peut effectivement devenir une méthode pratique et robuste pour la caractérisation rapide et in situ de ces propriétés des liquides, notamment pour des applications où la quantité d'échantillon est limitée ou lorsque des mesures en temps réel sont requises.
+L'enjeu est de déterminer si la QCM peut effectivement devenir une méthode pratique et robuste pour la caractérisation rapide et in situ de ces propriétés des liquides, 
+notamment pour des applications où la quantité d'échantillon est limitée ou lorsque des mesures en temps réel sont requises.
 
 \section{Objectifs}
-\index{objectifs}
-- 
+\begin{itemize}
+    \item Mise en service du Capteur Open QCM.
+    \item Développement d'un logitiel pour comuniquer entre le capteur et l'ordinateur, traiter et stocker les signeaux caputer.
+    \item mesurer plusieurs materieux a différente temperatures
+
+\end{itemize}
 
 \section{Méthodologie}
 
