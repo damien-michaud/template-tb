@@ -2,18 +2,13 @@
 
 \section{Contexte}
 
-Les QCM (Quartz Crystal Microbalance) sont des capteurs de masse extrêmement sensibles,
-utilisés pour mesurer des variations de masse à l'échelle nanogramme \cite{WANG2024109967}.
-Ce type de capteur fonctionne en excitant le quartz à différentes fréquences,
-en analysant les réponses du quartz pour en déduire les variations de fréquence de résonance.
-La fréquence de résonance varie en fonction de la masse adsorbée à sa surface.
-Cette technologie est utilisée dans divers domaines tels que la biologie,
-la chimie et les sciences des matériaux.
+Les microbalances à cristal de quartz (QCM) sont des capteurs de masse extrêmement sensibles, capables de détecter des variations de l’ordre du nanogramme. 
+Le fonctionnement repose sur l’excitation du quartz à différentes fréquences : la fréquence de résonance varie en fonction de la masse adsorbée sur la surface du cristal. 
+Ces capteurs trouvent des applications dans de nombreux domaines, notamment en biologie, en chimie, et en science des matériaux.
 
 \section{Problématique}
-Les microbalances à cristal de quartz (QCM) sont largement reconnues comme des capteurs de masse extrêmement sensibles, 
-capables de détecter des variations de l'ordre du nanogramme. Cependant, 
-l'interaction entre le matériau en contact et le cristal de quartz va bien au-delà de la simple relation entre la masse et la fréquence de résonance. 
+Les microbalances à cristal de quartz (QCM) sont largement reconnues comme des capteurs de masse. Cependant, 
+l'interaction entre le matériau en contact et le cristal de quartz est plus complexe que la simple relation entre la masse et la fréquence de résonance. 
 Les modifications de l'amplitude et de la largeur de bande du signal de résonance suggèrent la possibilité de mesurer d'autres propriétés des matériaux.
 
 La problématique vise donc à explorer dans quelle mesure la QCM peut être utilisée comme un outil fiable et précis pour la quantification de ces propriétés physiques des matériaux, 
@@ -35,8 +30,18 @@ notamment pour des applications où la quantité d'échantillon est limitée ou 
 
 \section{Méthodologie}
 
-La section méthodologie décrit la démarche que vous avez adoptée pour atteindre les objectifs fixés et résoudre la problématique. Elle doit expliquer de manière structurée et argumentée les étapes suivies, les choix effectués, ainsi que les outils et méthodes utilisés.
+La démarche suivante inclut:
+\begin{itemize}
+    \item L’implémentation d’une architecture logicielle orientée objet pour structurer les échanges et traitements.
+    \item L’implémentation d’un protocole de communication série avec le capteur.
+    \item Une procédure expérimentale rigoureuse pour la calibration, l'acquisition et l’analyse des signaux.
+    \item La mise en œuvre d’un système de contrôle thermique pour la micro balance.
+    \item La mise en place d'une expérience pour comparer la réponse fréquentielle et la viscosité de différents échantillons.
+    \item Mesurer les changements de phase de la gélatine. 
+\end{itemize}
 
-Vous devez justifier chacune de vos décisions : pourquoi avez-vous opté pour une telle approche plutôt qu'une autre ? Quels sont les avantages de cette méthode par rapport aux alternatives disponibles ? Cette section permet également de présenter les critères de sélection des outils, les méthodes d'analyse utilisées, ainsi que le cadre expérimental mis en place.
 
-En clarifiant votre démarche méthodologique, vous montrez non seulement la rigueur de votre travail, mais vous facilitez aussi la compréhension et la reproductibilité de vos résultats.
+
+
+
+
