@@ -2,42 +2,44 @@
 
 \section{Contexte}
 
-Les microbalances à cristal de quartz (QCM) sont des capteurs de masse extrêmement sensibles, capables de détecter des variations de l’ordre du nanogramme. 
-Le fonctionnement repose sur l’excitation du quartz à différentes fréquences : la fréquence de résonance varie en fonction de la masse adsorbée sur la surface du cristal. 
-Ces capteurs trouvent des applications dans de nombreux domaines, notamment en biologie, en chimie, et en science des matériaux.
+Les microbalances à cristal de quartz (QCM) sont des capteurs de masse extrêmement sensibles, capables de détecter des variations de masse aussi petites qu’une fraction de monocouche ou qu’une seule couche d’atomes \cite{Boyadjiev_WO3_2007}.  
+Leur fonctionnement repose sur l’excitation du quartz à différentes fréquences.  
+En observant les variations de la fréquence de résonance, il est possible de déduire la masse adsorbée sur la surface du cristal.
+
+Ces capteurs trouvent des applications dans de nombreux domaines, notamment en biologie, en chimie et en science des matériaux.
 
 \section{Problématique}
-Les microbalances à cristal de quartz (QCM) sont largement reconnues comme des capteurs de masse. Cependant, 
-l'interaction entre le matériau en contact et le cristal de quartz est plus complexe que la simple relation entre la masse et la fréquence de résonance. 
+
+Les microbalances à cristal de quartz (QCM) sont largement reconnues comme des capteurs de masse. Cependant,  
+l'interaction entre le matériau en contact avec le cristal de quartz est plus complexe qu'une simple relation entre la masse et la fréquence de résonance.  
 Les modifications de l'amplitude et de la largeur de bande du signal de résonance suggèrent la possibilité de mesurer d'autres propriétés des matériaux.
 
-La problématique vise donc à explorer dans quelle mesure la QCM peut être utilisée comme un outil fiable et précis pour la quantification de ces propriétés physiques des matériaux, 
-notamment la viscosité, l'élasticité et la densité, 
-particulièrement pour de faibles volumes de liquides. 
-Quels sont les modèles théoriques et les méthodes d'analyse de données nécessaires pour extraire ces grandeurs avec précision à partir des signaux QCM ? 
+La problématique vise donc à explorer dans quelle mesure une QCM peut être utilisée pour la quantification de la viscosité des matériaux.  
+Quels sont les modèles théoriques et les méthodes d'analyse de données nécessaires pour extraire ces grandeurs avec précision à partir des signaux QCM ?  
 Quelles sont les limites de cette technique en termes de gamme de mesure et de sensibilité pour ces propriétés spécifiques ?
 
-L'enjeu est de déterminer si la QCM peut effectivement devenir une méthode pratique et robuste pour la caractérisation rapide et in situ de ces propriétés des liquides, 
+L'enjeu est de déterminer si la QCM peut effectivement devenir une méthode pratique et robuste pour la caractérisation rapide des propriétés des liquides,  
 notamment pour des applications où la quantité d'échantillon est limitée ou lorsque des mesures en temps réel sont requises.
 
 \section{Objectifs}
-\begin{itemize}
-    \item Mise en service du Capteur Open QCM.
-    \item Développement d'un logitiel pour comuniquer entre le capteur et l'ordinateur, traiter et stocker les signeaux caputer.
-    \item mesurer plusieurs materieux a différente temperatures
 
+\begin{itemize}[label=\textbullet]
+    \item Mise en service du capteur OpenQCM.
+    \item Développement d'un logiciel pour communiquer entre le capteur et l'ordinateur, traiter et stocker les signaux captés.
+    \item Mesure de plusieurs fluides à différentes températures.
+    \item Étude de l'effet de la gélification sur les fréquences de résonance et la viscosité.
 \end{itemize}
 
 \section{Méthodologie}
 
-La démarche suivante inclut:
-\begin{itemize}
-    \item L’implémentation d’une architecture logicielle orientée objet pour structurer les échanges et traitements.
+La démarche suivante inclut :
+\begin{itemize}[label=\textbullet]
+    \item L’implémentation d’une architecture logicielle orientée objet pour structurer les échanges et les traitements.
     \item L’implémentation d’un protocole de communication série avec le capteur.
     \item Une procédure expérimentale rigoureuse pour la calibration, l'acquisition et l’analyse des signaux.
-    \item La mise en œuvre d’un système de contrôle thermique pour la micro balance.
+    \item La mise en œuvre d’un système de contrôle thermique pour la microbalance.
     \item La mise en place d'une expérience pour comparer la réponse fréquentielle et la viscosité de différents échantillons.
-    \item Mesurer les changements de phase de la gélatine. 
+    \item La mesure des changements de phase de la gélatine.
 \end{itemize}
 
 

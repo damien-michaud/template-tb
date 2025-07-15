@@ -22,6 +22,7 @@
 
 % Si vous voulez générer des graphiques avec pgfplots
 \usepackage{pgfplots}
+\usepackage{pdfpages}
 \usepgfplotslibrary{colormaps}
 \pgfplotsset{width=10cm,compat=1.18}
 
@@ -71,15 +72,9 @@
 {
   \tableofcontents
   \let\cleardoublepage\clearpage
-  \listoffigures
-  \let\cleardoublepage\clearpage
-  \listoftables
-  \let\cleardoublepage\clearpage
-  \listoflistings
 }
 
-\printnomenclature
-\clearemptydoublepage
+
 \pagenumbering{arabic}
 
 %% Contenu
@@ -89,6 +84,15 @@
 
 \clearpage
 \printbibliography
+
+  \listoffigures
+  \let\cleardoublepage\clearpage
+  \listoftables
+  \let\cleardoublepage\clearpage
+  \listoflistings
+
+\printnomenclature
+\clearemptydoublepage
 
 \appendix
 \appendixpage
