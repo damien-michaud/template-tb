@@ -1,8 +1,8 @@
 \chapter{Logiciel}
-Le logiciel développer dans le cadre de ce travail à pour objectif de collecter, traiter, afficher, et sauver les données mesurer par le capteur.
-Le logiciel fourni par le fabriquant permet deja d'utiliser le capteur, cependant il manque certaine fonctionnalité. Le nouveux logiciel apporte donc des fonctionnalités  importantes du logiciel, on peut citer l’ouverture dans une seule fenêtre unique, ce qui facilite la navigation et la lisibilité.
+Le logiciel développé dans le cadre de ce travail a pour objectifs de collecter, traiter, afficher, et sauvegarder les données mesurées par le capteur.
+Le logiciel fourni par le fabriquant permet déjà d'utiliser le capteur, cependant il manque certaines fonctionnalités. Le nouveau logiciel apporte donc des fonctionnalités importantes du logiciel, on peut citer l’ouverture dans une seule fenêtre unique, ce qui facilite la navigation et la lisibilité.
 L'utilisateur a un contrôle total sur les mesures : il peut notamment ajuster la précision ainsi que la largeur de bande de la mesure (en Hz).
-Il peut aussi choisir non seulement quel harmonique on désire mesurer mais il est possible de choisir plusieurs à mesurer en même temps.
+Il peut aussi choisir non seulement quel harmonique on désire mesurer mais il est possible de choisir plusieurs harmoniques en même temps.
 
 \section{Choix du langage de programmation}
 
@@ -31,7 +31,7 @@ Les critères de sélection du langage de programmation pour le développement d
 
 Le langage de programmation choisi pour le développement du logiciel est Python.  
 Ce choix s’explique par le fait qu’il est le seul à répondre à l’ensemble des critères de sélection. C’est également le langage utilisé par le fabricant pour le développement de son logiciel, ce qui facilite grandement l’adaptation et la réutilisation des fonctions déjà existantes.  
-Par ailleurs, Python est un langage largement enseigné dans les milieux scientifique et technique, ce qui facilite sa prise en main par de futurs développeurs.
+Par ailleurs, Python est un langage largement enseigné dans les milieux scientifiques et techniques, ce qui facilite sa prise en main par de futurs développeurs.
 
 
 \section{Architecture du logiciel}
@@ -60,9 +60,9 @@ Par ailleurs, Python est un langage largement enseigné dans les milieux scienti
 
 Le tableau \ref{tab:comparatif_paradigmes} présente une évaluation des paradigmes de programmation pour un logiciel de mesure avec interface graphique.
 
-Le paradigme orienté objet obtient la meilleure note totale, ce qui en fait le choix privilégié pour ce logiciel. Il se distingue notamment par sa capacité à organiser le code de manière claire, à modéliser des composants complexes (comme des capteurs ou des interfaces utilisateur) et à faciliter l’évolution du logiciel grâce à l’encapsulation, l’héritage et la réutilisabilité.
+Le paradigme orienté objet obtient la meilleure note totale, ce qui en fait le choix privilégié pour ce logiciel. Il se distingue notamment par sa capacité à organiser le code de manière claire, à modéliser des composants complexes (comme des capteurs ou des interfaces utilisateurs) et à faciliter l’évolution du logiciel grâce à l’encapsulation, l’héritage et la réutilisabilité.
 
-Ces caractéristiques sont particulièrement adaptées dans le cadre d'une application de mesure, où l’on doit à la fois gérer l’état interne de l’instrument, l’interface graphique, la communication avec le capteur, et structurer le code de manière modulaire.
+Ces caractéristiques sont particulièrement adaptées dans le cadre d'une application de mesures où l’on doit, à la fois gérer l’état interne de l’instrument, l’interface graphique, la communication avec le capteur et structurer le code.
 
 Bien que le paradigme fonctionnel soit intéressant pour la parallélisation ou le traitement des données, et que le paradigme procédural soit plus simple à mettre en place pour des scripts très courts, ils restent moins adaptés à la complexité et à la maintenabilité attendues dans ce projet.
 
@@ -70,20 +70,20 @@ Bien que le paradigme fonctionnel soit intéressant pour la parallélisation ou 
 
 La figure \ref{uml.drawio} présente le diagramme de classes du logiciel développé. Ce diagramme illustre la structure orientée objet retenue ainsi que la répartition des fonctionnalités entre les différentes classes.
 
-Chaque objet est conçu pour assumer une responsabilité bien précise, ce qui permet de structurer le code de manière claire, modulaire et évolutive.
+Chaque objet est conçu pour assumer une responsabilité bien précise, ce qui permet de structurer le code de manière claire, modulaire et évolutive. Les classes principales sont les suivantes :
 
 \begin{itemize}[label=\textbullet]
-  \item \textbf{SerialConnection}~: cette classe abstraite contient les méthodes standard de communication série.
-  \item \textbf{QCMSerial}~: cette classe hérite de \textbf{SerialConnection} et est responsable de l’établissement de la connexion ainsi que de la lecture des données spécifiques à une microbalance.
-  \item \textbf{PT100Signal}~: cette classe hérite de \textbf{SerialConnection} et est responsable de l’établissement de la connexion ainsi que de la lecture des données spécifiques à une sonde de température PT100.
-  \item \textbf{Signal}~: cette classe se charge du traitement du signal (filtrage, extraction de caractéristiques, etc.).
-  \item \textbf{Parameter}~: cette classe regroupe l’ensemble des paramètres associés à un signal, comme la fréquence d’amplitude maximale, l'amplitude maximale, ou encore la température du QCM.
-  \item \textbf{Parameters}~: cette classe regroupe une liste d’objets \textbf{Parameter} ; elle permet de sauvegarder, charger et extraire les paramètres de mesure.
-  \item \textbf{Settings}~: cette classe gère les paramètres de configuration de la prise de mesures.
-  \item \textbf{Mesure}~: cette classe joue un rôle central en coordonnant les autres objets. Elle représente l’ensemble du processus de mesure, de l’acquisition à l’analyse. Elle contient tous les signaux mesurés ainsi que les paramètres de mesure.
+  \item \textbf{SerialConnection}~: abstraite, contient les méthodes standard de communication série.
+  \item \textbf{QCMSerial}~: hérite de \textbf{SerialConnection} et est responsable de l’établissement de la connexion ainsi que de la lecture des données spécifiques à une microbalance.
+  \item \textbf{PT100Signal}~: hérite de \textbf{SerialConnection} et est responsable de l’établissement de la connexion ainsi que de la lecture des données spécifiques à une sonde de température PT100.
+  \item \textbf{Signal}~: se charge du traitement du signal (filtrage, extraction de caractéristiques, etc.).
+  \item \textbf{Parameter}~: regroupe l’ensemble des paramètres associés à un signal, comme la fréquence d’amplitude maximale, l'amplitude maximale, ou encore la température du QCM.
+  \item \textbf{Parameters}~: regroupe une liste d’objets \textbf{Parameter} ; elle permet de sauvegarder, charger et extraire les paramètres de mesure.
+  \item \textbf{Settings}~: gère les paramètres de configuration de la prise de mesures.
+  \item \textbf{Mesure}~: joue un rôle central en coordonnant les autres objets. Elle représente l’ensemble du processus de mesure, de l’acquisition à l’analyse. Elle contient tous les signaux mesurés ainsi que les paramètres de mesure.
 \end{itemize}
 
-\fig[H, width=\textwidth]{Diagramme de classes}{uml.drawio}
+\fig[H, width=\textwidth]{Diagramme UML de classes}{uml.drawio}
 
 \newpage
 
@@ -98,14 +98,14 @@ La méthode consiste à repérer la position du premier pic de résonance. Une f
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/5MhzCalibration.png}
-    \caption{Signal de calibration du capteur QCM comportant 6 pics de résonance.}
+    \caption{Signal de calibration du capteur QCM 5MHz comportant 6 pics de résonance}
     \label{fig:calibration 5MHz plot}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/10MHzCalibration.png}
-    \caption{Signal des 3 premières harmoniques de résonance.}
+    \caption{ignal de calibration du capteur QCM 10MHz comportant 3 pics de résonance}
     \label{fig:harmonic 10MHz Calibration}
 \end{figure}
 
@@ -247,6 +247,7 @@ où :
     \item $N_{\text{max}}$ : valeur maximale du codeur ADC (ici $8192$, correspondant à un ADC sur 13 bits),
     \item $V_{\text{CP}}$ : tension de référence (0,9\,V),
     \item $y_i$ : valeur convertie (en unité physique finale).
+    \item $k$ : coefficient de conversion de l'ADC, qui dépend de la tension maximale mesurable et de la résolution de l'ADC.   
 \end{itemize}
 
 \section{Connexion}

@@ -45,11 +45,11 @@ Le gain de l'amplificateur est ajusté pour correspondre à la plage de tension 
 
 \subsection{Filtre passe-bas}
 Lors des premiers tests de mesures de température, il a été constaté que le signal de température était instable.
-Chaque harmonique à laquelle le capteur vibrait donnait une température différente ; pour une harmonique donnée, la température restait stable.
+Chaque harmonique à laquelle le capteur vibrait donnait une température différente ; pour une harmonique donnée, la température restait stable (Figure~\ref{fig:TempBruit}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/figures/TempBruit.png}
-    \caption{Fenêtre principale du logiciel de mesure}
+    \caption{Mesure de température avec perturbations}
     \label{fig:TempBruit}
 \end{figure}
 
@@ -69,7 +69,7 @@ Pour vérifier notre troisième hypothèse, un oscilloscope a été utilisé pou
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{assets/figures/SCR00006.png}
-        \caption{Fenêtre principale du logiciel de mesure}
+        \caption{Vue de l'oscilloscope lors de l'excitation du quartz à 10MHz}
         \label{fig:10mhzbruit}
     \end{minipage}
 \end{figure}
@@ -84,7 +84,7 @@ Pour vérifier notre troisième hypothèse, un oscilloscope a été utilisé pou
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{assets/figures/SCR00007.png}
-        \caption{Fenêtre principale du logiciel de mesure}
+        \caption{Vue de l'oscilloscope lors de l'excitation du quartz à 30MHz}
         \label{fig:30mhzbruit}
     \end{minipage}
 \end{figure}
@@ -99,12 +99,12 @@ Pour vérifier notre troisième hypothèse, un oscilloscope a été utilisé pou
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{assets/figures/SCR00008.png}
-        \caption{Fenêtre principale du logiciel de mesure}
+        \caption{Vue de l'oscilloscope lors de l'excitation du quartz à 50MHz}
         \label{fig:50mhzbruit}
     \end{minipage}
 \end{figure}
 
-Une corrélation entre l'amplitude du signal mesuré et les perturbations de mesures de température de la figure \ref{fig:TempBruit} a été établie.
+Une corrélation entre l'amplitude du signal mesurée et les perturbations de mesures de température de la figure \ref{fig:TempBruit} a été établie.
 Cette perturbation est principalement due à la bande passante limitée de l'amplificateur opérationnel utilisé dans le circuit de conditionnement. Lorsque la fréquence du signal dépasse la bande passante de l'amplificateur, celui-ci n'est plus capable de suivre correctement les variations rapides, ce qui introduit du bruit et des distorsions dans la mesure de température.
 
 Pour remédier à ce problème, un filtre passe-bas a été ajouté au circuit de conditionnement du signal.
@@ -117,18 +117,23 @@ f_c = \frac{1}{2\pi RC}
 \label{eq:frequence_coupure}
 \end{equation}
 
-où $f_c$ est la fréquence de coupure en hertz, $R$ la résistance en ohms et $C$ la capacité en farads.
+où
+\begin{itemize}
+    \item $f_c$ est la fréquence de coupure en Hz,
+    \item $R$ est la résistance en $\Omega$,
+    \item $C$ est la capacité en $\mathrm{F}$.
+\end{itemize}
 
 Après avoir implémenté le filtre passe-bas, les mesures de température ont de nouveau été effectuées, dans les mêmes conditions que précédemment, c'est-à-dire dans l'eau distillée avec le capteur de température qui touche la surface du quartz pour avoir le maximum de perturbation.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/figures/TempFiltered.png}
-    \caption{Fenêtre principale du logiciel de mesure}
+    \caption{Mesure de température après application du filtre passe-bas}
     \label{fig:TempBruitFiltre}
 \end{figure}
 
-Les résultats sont excellents et la température est stable et ne varie plus de plus de 0,1 degré Celsius entre les différentes harmoniques.
+Les résultats sont excellents et la température est stable et ne varie pas de plus de 0,1 degré Celsius entre les différentes harmoniques.
 Le filtre passe-bas a donc permis de stabiliser la mesure de température en éliminant les perturbations dues aux fréquences indésirables.
 
 \subsection{Calibration du capteur}

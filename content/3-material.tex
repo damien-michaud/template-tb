@@ -11,19 +11,17 @@ et que toute œuvre dérivée soit diffusée sous la même licence \cite{cc-by-n
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/Quartz-Crystal-Microbalance-QCM-D-openQCM-Q-1.png}
-    \caption{Capteur Q-1 de la société openQCM}
+    \caption{Capteur Q-1 de la société openQCM \cite{manual-openqcmQ1}.}
     \label{fig:Q-1}
 \end{figure}
 
 \section{Electroniques}
-The electronics mainly consists of a scalar network analyser, the main block diagram is showed in
-figure. The scheme of measurement follows the principle of passive interrogation of the quartz
-sensor by sweeping around the resonance frequency.
+L’électronique se compose principalement d’un analyseur de réseau scalaire, dont le schéma bloc principal est présenté sur la figure \ref{fig:bloc diagram Q-1}. Le schéma de mesure suit le principe de l’interrogation passive du capteur à quartz en balayant autour de la fréquence de résonance.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/electronic block diagram QCM.png}
-    \caption{diagramme bloc electronique du capteur Q-1}
+    \caption{diagramme bloc electronique du capteur Q-1 \cite{manual-openqcmQ1}.}
     \label{fig:bloc diagram Q-1}
 \end{figure}
 
@@ -40,14 +38,14 @@ sensor by sweeping around the resonance frequency.
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{assets/figures/Quartz-Crystal-Microbalance-openQCM-Q-1-Shield-Photo.png}
-        \caption{Diagramme bloc électronique du capteur Q-1}
+        \caption{Diagramme bloc électronique du capteur Q-1 \cite{manual-openqcmQ1}}
         \label{fig:Main Board Q-1}
     \end{minipage}
 \end{figure}
 
 \section{cellules}
 Les cellules de mesures ont pour but d'accueillir le cristal de quartz et le liquide à annalyser.
-Elles possède un petit pcb qui fais le lien entre le cristal de quartz et la carte mère.
+Elles possède un petit PCB qui fais le lien entre le cristal de quartz et la carte mère.
 Ce PCB possède aussi un capteur de température pour mesurer la température de l'appareil de mesure.
 
 \subsection{Cellule fluidique}
@@ -55,18 +53,18 @@ Ce PCB possède aussi un capteur de température pour mesurer la température de
     \centering
     \begin{minipage}{0.48\textwidth}
         \small
-        La cellule de fluidique a comme spécificité d'avoir un petite chambre de mesures environ 50 µl.
-        Le liquide traverse la chambre de mesure par deux orifices situé au dessus et en dessous du cristal. 
-        si un pompe perisrataltique est utilisée,le liquide est asspier dans la chambre.
-        Si un seringue est utilisée, le liquide est poussé dans la chambre.
+        La cellule de fluidique a comme spécificité d'avoir une petite chambre de mesures d'environ 50 µl.
+        Le liquide traverse la chambre de mesure par deux orifices situés au-dessus et en dessous du cristal.
+        Si une pompe péristaltique est utilisée, le liquide est aspiré dans la chambre.
+        Si une seringue est utilisée, le liquide est poussé dans la chambre.
 
-        Un couvercle en plexiglas transparent permet de visualiser le cristal de quartz et le liquide à analyser,
-        cepandant un autre couvercle en plastique est fourni pour des solvent qui peuvent endomager le plexiglas.
+        Un couvercle en PMMA (polyméthacrylate de méthyle) transparent permet de visualiser le cristal de quartz et le liquide à analyser,
+        cependant un autre couvercle en plastique est fourni pour des solvants qui peuvent endommager le PMMA.
     \end{minipage}\hfill
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{assets/figures/fluidic cell.png}
-        \caption{Cellule de mesure du capteur Q-1}
+        \caption{Cellule de mesure du capteur Q-1 \cite{manual-openqcmQ1}}
         \label{fig:cellule de mesure Q-1}
     \end{minipage}
 \end{figure}
@@ -76,24 +74,23 @@ Ce PCB possède aussi un capteur de température pour mesurer la température de
     \centering
     \begin{minipage}{0.48\textwidth}
         \small
-        La cellule electrochimique est consure pour etre mesurer des reaction électrochimique.
-        elle est composer d'un grand récippient de 10 ml, et un cristal de quartz au fond du récipient.
-        La cellule n'est pas equipée des elecodes de la figure \ref{fig:cellule electrolitique Q-1}.
+    La cellule électrochimique est conçue pour mesurer des réactions électrochimiques.
+    Elle est composée d'un grand récipient de 15 ml, et d'un cristal de quartz au fond du récipient (figure \ref{fig:cellule electrolitique Q-1}).
     \end{minipage}\hfill
     \begin{minipage}{0.48\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{assets/figures/E-QCM_Module-openQCM-Q-1__71326.png}
+        \includegraphics[width=\textwidth]{assets/figures/ModuleElectrochimique.png}
         \caption{Cellule de mesure du capteur Q-1}
         \label{fig:cellule electrolitique Q-1}
     \end{minipage}
 \end{figure}
 
 \section{Software}
-OpenQCM Q-1 GUI version 2.1 est une application open-source développée en Python par l'équipe openQCM et soutenue par Novaetech S.r.l. Ce logiciel est conçu pour afficher, traiter et stocker des données en temps réel provenant de l'appareil openQCM Q-1. Il est principalement destiné à un public scientifique, de recherche et d'ingénierie. L'installation nécessite le téléchargement de l'application depuis le site officiel, suivi de l'installation d'Anaconda3 pour Python 3.7. Des packages Python spécifiques comme pyqtgraph, pyserial, et h5py doivent être installés ou mis à jour via des commandes conda et pip. L'interface utilisateur principale se compose de trois fenêtres distinctes : "Setup/Control GUI", "Real-time Plot GUI" et "Info GUI", chacune offrant des fonctionnalités spécifiques pour le contrôle, la visualisation et l'information des données. Le logiciel permet également des procédures de calibration et de mesure, avec des options pour sauvegarder et exporter les données. Les graphiques en temps réel sont basés sur PyQtGraph, offrant des options interactives pour la visualisation et l'exportation des données.
+OpenQCM Q-1 GUI version 2.1 est une application open-source développée en Python par l'équipe openQCM et soutenue par Novaetech S.r.l. Ce logiciel est conçu pour afficher, traiter et stocker des données en temps réel provenant de l'appareil openQCM Q-1. Il est principalement destiné à un public scientifique, de recherche et d'ingénierie. L'installation nécessite le téléchargement de l'application depuis le site officiel, suivi de l'installation d'Anaconda3 pour Python 3.7. Des packages Python spécifiques comme pyqtgraph, pyserial, et h5py doivent être installés ou mis à jour via des commandes conda et pip. L'interface utilisateur principale se compose de trois fenêtres distinctes : "Setup/Control GUI", "Real-time Plot GUI" et "Info GUI", chacune offrant des fonctionnalités spécifiques pour le contrôle, la visualisation et l'information des données. Le logiciel permet également des procédures de calibration et de mesure, avec des options pour sauvegarder et exporter les données. Les graphiques en temps réel sont basés sur PyQtGraph, offrant des options interactives pour la visualisation et l'exportation des données \ref{fig:cellule électrolytique Q-1}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/QCM-GUI.png}
-    \caption{Application openQCM Q-1 GUI version 2.1}
+    \caption{Application openQCM Q-1 GUI version 2.1\cite{manual-openqcmQ1}}
     \label{fig:QCM-GUI}
 \end{figure}

@@ -57,7 +57,7 @@ Ensuite, nous avons mesuré la viscosité de ces liquides à la même températu
 Avant de commencer les mesures, il est nécessaire de préparer les échantillons.
 
 Les échantillons sont composés de 15 ml. Les mélanges sont préparés comme suit :
-\begin{itemize}
+\begin{itemize}[label=\textbullet]
     \item 100\% eau distillée
     \item 100\% huile moteur
     \item 100\% éthanol
@@ -65,8 +65,9 @@ Les échantillons sont composés de 15 ml. Les mélanges sont préparés comme s
     \item 50\% glycérol et 50\% eau distillée
     \item 33\% glycérol et 66\% eau distillée
 \end{itemize}
+Le montage est le même que celui expliqué dans le chapitre \ref{chap:Gestion de la température}.
 
-Pour chaque échantillon, une petite partie est utilisée pour la mesure de viscosité avec une seringue.
+Pour chaque échantillon, une petite partie (400 µL) est utilisée pour la mesure de viscosité avec une seringue.
 
 Le reste de l'échantillon est utilisé pour remplir la cellule de mesure du capteur QCM.
 
@@ -104,7 +105,7 @@ Ce protocole permet d'observer l'effet de la température sur la réponse fréqu
 \subsubsection{Protocole de mesure avec le viscosimètre}
 
 Pour la mesure de la viscosité à l'aide du viscosimètre, la température de chaque échantillon est contrôlée par paliers successifs. À chaque étape, la température est stabilisée à une valeur cible avant de procéder à la mesure. Les températures choisies pour les paliers sont les suivantes :
-\begin{itemize}
+\begin{itemize}[label=\textbullet]
     \item 20 °C
     \item 22 °C
     \item 24 °C
@@ -116,7 +117,7 @@ Pour chaque palier, une mesure de viscosité est réalisée une fois que la temp
 
 \subsection{Résultats}
 
-Les résultats de l'expérience se composent premièrement des mesures d'amplitude et de fréquence obtenues avec le capteur QCM, ainsi que de la température mesurée par la sonde PT100.  
+Pour tous les résultats obtenus au moyen du capteur QCM, la troisième à harmonique (à 30Mhz) a été choisie car elle offre le meilleur signal. Les résultats de l'expérience se composent premièrement des mesures d'amplitude et de fréquence obtenues avec le capteur QCM, ainsi que de la température mesurée par la sonde PT100.  
 Ils sont présentés dans la figure \ref{fig:Amplitude VS Température} pour l'amplitude et dans la figure \ref{fig:Frequence VS Température} pour la fréquence.
 
 \begin{figure}[H]
@@ -181,7 +182,7 @@ Les pentes des fréquences suivent la même tendance que celles des amplitudes :
 Les résultats sont très intéressants dans la mesure où, une fois le modèle mathématique de la relation entre viscosité et signal de résonance déterminé, il sera possible de mesurer la viscosité d’un liquide par la simple mesure de l’amplitude de résonance du capteur QCM.  
 C’est pourquoi nous avons cherché à déterminer la relation entre viscosité et fréquence de résonance.
 
-Nous avons commencé par réutiliser l’équation \cite{eq:frequence_resonance} qui relie la différence de fréquence à la viscosité.  
+Nous avons commencé par réutiliser l’équation \eqref{eq:frequence_resonance} qui relie la différence de fréquence à la viscosité.  
 Cette équation suggère que la différence est proportionnelle à la racine carrée de la viscosité.  
 C’est pourquoi les figures \ref{fig:Frequence carré VS Viscosité} et \ref{fig:Frequence carré VS Viscosité Zoom} représentent la différence de fréquence au carré en fonction du produit viscosité $\times$ densité des différents échantillons.  
 L'espoir est que les données suivent une tendance linéaire. La pente devrait dépendre des caractéristiques du quartz.
@@ -270,29 +271,31 @@ Les mesures de gélification sont utiles car elles permettent d'observer les tra
 
 \subsection{Protocole}
 
+
 La préparation de la solution consiste à dissoudre la gélatine dans de l’eau chaude. Un rapport de 7,5 g de gélatine pour 100 g d’eau a été utilisé. L’eau est chauffée à 60 °C, puis le mélange est agité pendant 30 minutes afin d’assurer une dissolution complète.
 
 Le protocole mis en œuvre pour étudier la gélification est le suivant :
-\begin{itemize}
+\begin{enumerate}
     \item Préparer la solution de gélatine comme décrit ci-dessus.
-    \item Remplir la cellule QCM avec la solution chaude.
+    \item Remplir la cellule QCM avec 10ml de la solution chaude.
     \item Démarrer l’acquisition des données à l’aide du capteur QCM.
     \item Refroidir progressivement la solution à l’aide du système de refroidissement décrit précédemment.
     \item Observer les variations de la fréquence de résonance tout au long du processus de gélification.
-\end{itemize}
+\end{enumerate}
+Le montage est le même que celui expliqué dans le chapitre \ref{chap:Gestion de la température}.
 
 Les paramètres utilisés pour les mesures sont présentés sur la figure~\ref{fig:SettingsGelification}. Ces réglages correspondent à ceux utilisés pour l'acquisition des données lors de l'étude de la gélification.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\textwidth]{assets/figures/SettingsWater-Ethanol.png}
+    \includegraphics[width=0.6\textwidth]{assets/figures/SettingsWater-Ethanol.png}
     \caption{Paramètres de mesure utilisés pour la gélification}
     \label{fig:SettingsGelification}
 \end{figure}
 
 \subsection{Résultats}
 
-Les résultats de la mesure de la gélification sont présentés dans la figure \ref{fig:Frequence gelification}. 
+Les résultats de la mesure de la gélification sont présentés dans la figure \ref{fig:Frequence gelification}. Ils se trouvent à la troisième harmonique du cristal (15 MHz) car c'est la que se trouve le signal le plus propre. 
 
 Lorsque le liquide est refroidi, un changement de la pente entre la fréquence de résonance et la température est visible aux alentours de 25 °C. 
 
