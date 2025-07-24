@@ -3,7 +3,7 @@
 Ce project est basé sur l'utilisation du capteur Q-1 de la société openQCM.
 L’openQCM Q-1 est un instrument de microbalance à quartz (Quartz Crystal Microbalance) capable de mesurer simultanément les variations de fréquence et de dissipation. 
 L’appareil est donc capable de mesurer à la fois les variations de masse et les propriétés viscoélastiques du matériau à la surface du cristal de quartz.
-Le capteur est open-source, sous la liscence creatve comon \cite{manual-openqcmQ1}.
+Le capteur est open-source, sous la licence \textit{Creative Commons} \cite{manual-openqcmQ1}.
 
 Cette licence permet de partager le contenu et de l’adapter à condition que l’auteur soit crédité, que l’usage ne soit pas commercial, 
 et que toute œuvre dérivée soit diffusée sous la même licence \cite{cc-by-nc-sa-4.0}.
@@ -15,7 +15,7 @@ et que toute œuvre dérivée soit diffusée sous la même licence \cite{cc-by-n
     \label{fig:Q-1}
 \end{figure}
 
-\section{Electroniques}
+\section{Electronique}
 L’électronique se compose principalement d’un analyseur de réseau scalaire, dont le schéma bloc principal est présenté sur la figure \ref{fig:bloc diagram Q-1}. Le schéma de mesure suit le principe de l’interrogation passive du capteur à quartz en balayant autour de la fréquence de résonance.
 
 \begin{figure}[H]
@@ -43,17 +43,17 @@ L’électronique se compose principalement d’un analyseur de réseau scalaire
     \end{minipage}
 \end{figure}
 
-\section{cellules}
-Les cellules de mesures ont pour but d'accueillir le cristal de quartz et le liquide à annalyser.
-Elles possède un petit PCB qui fais le lien entre le cristal de quartz et la carte mère.
-Ce PCB possède aussi un capteur de température pour mesurer la température de l'appareil de mesure.
+\section{Cellules}
+Les cellules de mesure ont pour rôle d’accueillir le cristal de quartz ainsi que le liquide à analyser.
+Elles intègrent un petit circuit imprimé (PCB) assurant la connexion entre le cristal et la carte mère.
+Ce PCB est également équipé d’un capteur de température, permettant de surveiller la température de l’appareil de mesure.
 
 \subsection{Cellule fluidique}
 \begin{figure}[H]
     \centering
     \begin{minipage}{0.48\textwidth}
         \small
-        La cellule de fluidique a comme spécificité d'avoir une petite chambre de mesures d'environ 50 µl.
+        La cellule fluidique a comme spécificité d'avoir une petite chambre de mesures d'environ 50 µl.
         Le liquide traverse la chambre de mesure par deux orifices situés au-dessus et en dessous du cristal.
         Si une pompe péristaltique est utilisée, le liquide est aspiré dans la chambre.
         Si une seringue est utilisée, le liquide est poussé dans la chambre.
@@ -86,7 +86,7 @@ Ce PCB possède aussi un capteur de température pour mesurer la température de
 \end{figure}
 
 \section{Software}
-OpenQCM Q-1 GUI version 2.1 est une application open-source développée en Python par l'équipe openQCM et soutenue par Novaetech S.r.l. Ce logiciel est conçu pour afficher, traiter et stocker des données en temps réel provenant de l'appareil openQCM Q-1. Il est principalement destiné à un public scientifique, de recherche et d'ingénierie. L'installation nécessite le téléchargement de l'application depuis le site officiel, suivi de l'installation d'Anaconda3 pour Python 3.7. Des packages Python spécifiques comme pyqtgraph, pyserial, et h5py doivent être installés ou mis à jour via des commandes conda et pip. L'interface utilisateur principale se compose de trois fenêtres distinctes : "Setup/Control GUI", "Real-time Plot GUI" et "Info GUI", chacune offrant des fonctionnalités spécifiques pour le contrôle, la visualisation et l'information des données. Le logiciel permet également des procédures de calibration et de mesure, avec des options pour sauvegarder et exporter les données. Les graphiques en temps réel sont basés sur PyQtGraph, offrant des options interactives pour la visualisation et l'exportation des données \ref{fig:cellule électrolytique Q-1}.
+OpenQCM Q-1 GUI version 2.1 est une application open-source développée en Python par l'équipe openQCM et soutenue par Novaetech S.r.l. Ce logiciel est conçu pour afficher, traiter et stocker des données en temps réel provenant de l'appareil openQCM Q-1. Il est principalement destiné à un public scientifique, de recherche et d'ingénierie. L'installation nécessite le téléchargement de l'application depuis le site officiel, suivi de l'installation d'Anaconda3 pour Python 3.7. Des packages Python spécifiques comme pyqtgraph, pyserial, et h5py doivent être installés ou mis à jour via des commandes conda et pip. L'interface utilisateur principale se compose de trois fenêtres distinctes : "Setup/Control GUI", "Real-time Plot GUI" et "Info GUI", chacune offrant des fonctionnalités spécifiques pour le contrôle, la visualisation et l'information des données. Le logiciel permet également des procédures de calibration et de mesure, avec des options pour sauvegarder et exporter les données. Les graphiques en temps réel sont basés sur PyQtGraph, offrant des options interactives pour la visualisation et l'exportation des données \cite{manual-openqcmQ1}.
 
 \begin{figure}[H]
     \centering

@@ -1,6 +1,6 @@
 \chapter{Logiciel}
 Le logiciel développé dans le cadre de ce travail a pour objectifs de collecter, traiter, afficher, et sauvegarder les données mesurées par le capteur.
-Le logiciel fourni par le fabriquant permet déjà d'utiliser le capteur, cependant il manque certaines fonctionnalités. Le nouveau logiciel apporte donc des fonctionnalités importantes du logiciel, on peut citer l’ouverture dans une seule fenêtre unique, ce qui facilite la navigation et la lisibilité.
+Le logiciel fourni par le fabriquant permet déjà d'utiliser le capteur, cependant il manque certaines fonctionnalités. Le nouveau logiciel développé lors de ce projet apporte donc des fonctionnalités importantes du logiciel, on peut citer l’ouverture dans une seule fenêtre unique, ce qui facilite la navigation et la lisibilité.
 L'utilisateur a un contrôle total sur les mesures : il peut notamment ajuster la précision ainsi que la largeur de bande de la mesure (en Hz).
 Il peut aussi choisir non seulement quel harmonique on désire mesurer mais il est possible de choisir plusieurs harmoniques en même temps.
 
@@ -54,7 +54,7 @@ Par ailleurs, Python est un langage largement enseigné dans les milieux scienti
         \textbf{Note totale} & \textbf{12} & \textbf{14} & \textbf{17} \\
         \hline
     \end{tabular}
-    \caption{Évaluation des paradigmes pour un logiciel de mesure avec interface graphique (classement de 1 à 3)}
+    \caption{Évaluation des paradigmes pour un logiciel de mesure avec interface graphique (classement de 1 à 3, 1 étant le moins adapté et 3 le plus adapté)}
     \label{tab:comparatif_paradigmes}
 \end{table}
 
@@ -89,11 +89,11 @@ Chaque objet est conçu pour assumer une responsabilité bien précise, ce qui p
 
 \section{Mesures}
 
-Les mesures se déroulent en deux étapes.
+Les mesures se déroulent en deux étapes, pour effectuer la calibration par un balayage spectral large et l'acquisition des données par un balayage spectral fin.
 
 Dans un premier temps, le capteur effectue une mesure de calibration. Cette mesure consiste à balayer toute la plage de fréquences allant de 1 à 5{,}5~MHz avec un pas entre les points de mesure de 1~kHz (voir figure~\ref{fig:calibration 5MHz plot}).  
 L’objectif de cette étape est d’identifier automatiquement les fréquences de résonance du quartz. Pour ce faire, il est essentiel de détecter la fréquence fondamentale du quartz afin de déterminer s’il s’agit d’un quartz de 10~MHz ou de 5~MHz.  
-La méthode consiste à repérer la position du premier pic de résonance. Une fois cette fréquence déterminée, le programme peut ensuite rechercher toutes les fréquences de résonance : on en attend trois pour un quartz à 10~MHz et six pour un quartz à 5~MHz.
+La méthode consiste à repérer la position du premier pic de résonance. Une fois cette fréquence déterminée, le programme peut ensuite rechercher toutes les fréquences de résonance : on en attend trois pour un quartz à 10~MHz et six pour un quartz à 5~MHz, dans la plage spectral de l'instrument de 1Hz à 5{,}5~MHz.
 
 \begin{figure}[H]
     \centering
@@ -105,13 +105,14 @@ La méthode consiste à repérer la position du premier pic de résonance. Une f
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/10MHzCalibration.png}
-    \caption{ignal de calibration du capteur QCM 10MHz comportant 3 pics de résonance}
+    \caption{Signal de calibration du capteur QCM 10MHz comportant 3 pics de résonance}
     \label{fig:harmonic 10MHz Calibration}
 \end{figure}
 
 La deuxième étape consiste à mesurer plus précisément les pics de résonance (figure~\ref{fig:harmonic 5MHz plot}) identifiés lors de la mesure de calibration.  
 Pour cela, une fenêtre est choisie autour de chaque pic de résonance.  
-Dans le cas de la figure~\ref{fig:harmonic 5MHz plot}, la fenêtre s’étend de \(-5000\)~Hz à \(+15000\)~Hz autour de la fréquence de calibration. Le pas de mesure est de 20~Hz, afin d’obtenir une précision maximale.
+Dans le cas de la figure~\ref{fig:harmonic 5MHz plot}, la fenêtre s’étend de \(-5000\)~Hz à \(+15000\)~Hz autour de la fréquence de calibration. Le pas de mesure est de 20~Hz, afin d’obtenir une précision maximale. 
+L'utilisateur peut choisir la largeur spectral autour des pics, ainsi que l'échantillonnage des mesures.
 
 \begin{figure}[H]
     \centering
@@ -127,36 +128,41 @@ Dans le cas de la figure~\ref{fig:harmonic 5MHz plot}, la fenêtre s’étend de
     \label{fig:harmonic 10MHz plot}
 \end{figure}
 
+\newpage
+
 \section{Sélection des mesures}
 
 Depuis le menu, il est possible d'accéder à la fenêtre de sélection des paramètres de mesure (voir figure~\ref{fig:paramerter window}).  
 Les paramètres suivants peuvent être modifiés par l'utilisateur selon ses besoins :
 
 \begin{itemize}[label=\textbullet]
-    \item \textbf{Limite du nombre de mesures} : nombre maximum de mesures à effectuer. Si la limite est désactivée, l'utilisateur devra appuyer sur "Stop" pour arrêter la mesure.
+    \item \textbf{Limite du nombre de mesures} : nombre maximum de mesures (balayage) à effectuer. Si la limite est désactivée, l'utilisateur devra appuyer sur "Stop" pour arrêter la mesure.
     
     \item \textbf{Pas de la mesure de calibration} : pas de mesure (en Hz) utilisé lors de la calibration.
     
-    \item \textbf{Décalage négatif des mesures de pic} : décalage en Hz appliqué avant la fréquence de résonance détectée.
+    \item \textbf{Décalage négatif des mesures de pic} : décalage en Hz appliqué avant la fréquence de résonance détectée (début de la plage spectrale).
     
-    \item \textbf{Décalage positif des mesures de pic} : décalage en Hz appliqué après la fréquence de résonance détectée.
+    \item \textbf{Décalage positif des mesures de pic} : décalage en Hz appliqué après la fréquence de résonance détectée (fin de la plage spectrale).
     
     \item \textbf{Pas des mesures de pic} : pas de mesure (en Hz) utilisé pour le balayage autour des pics de résonance.
     
     \item \textbf{Harmonique(s)} : harmonique(s) à mesurer. Il est possible d'en sélectionner plusieurs simultanément.
-    
-    \item \textbf{Temps d'attente} : temps en secondes entre chaque mesure.
-    
+
+    \item \textbf{Temps d'attente} : temps en secondes entre chaque mesure (balayage).
+
     \item \textbf{Calibration par la phase} : si cette option est activée, la calibration se fait en fonction de la phase du signal ; sinon, elle se fait en fonction de l'amplitude.
 \end{itemize}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/figures/Parameter_window.png}
+    \includegraphics[width=0.6\textwidth]{assets/figures/DefaultSettings.png}
     \caption{Fenêtre de sélection des paramètres de mesure}
     \label{fig:paramerter window}
 \end{figure}
 
+Le temps d'attente pour chaque fréquence d'excitation avant de mesurer est défini dans le firmware du capteur QCM, et est fixé à 100 $\mu $s.
+La mesure envoyée par le capteur est la moyenne de 32 mesures effectuées à chaque fréquence d'excitation.
+\newpage
 \section{Affichage des données} 
 
 Le logiciel dispose de deux fenêtres pour afficher les données.
@@ -180,9 +186,10 @@ Cette fenêtre est composée de plusieurs parties :
     \label{fig:main window}
 \end{figure}
 
+\newpage
 La deuxième fenêtre est la fenêtre de visualisation des données (figure~\ref{fig:plot window}).  
 Elle permet de visualiser les données mesurées sous forme de graphiques.  
-Il est possible de choisir n'importe quel paramètre de la mesure à afficher sur l'axe des abscisses et n'importe quel paramètre à afficher sur l'axe des ordonnées.  
+Il est possible de choisir n'importe quel paramètre de la mesure à afficher sur l'axe des abscisses et n'importe quel paramètre à afficher sur l'axe des ordonnées (fréquence, amplitude, phase, température, etc.).  
 Il est également possible de choisir l'harmonique à afficher.
 
 \begin{enumerate}
@@ -249,9 +256,9 @@ où :
     \item $y_i$ : valeur convertie (en unité physique finale).
     \item $k$ : coefficient de conversion de l'ADC, qui dépend de la tension maximale mesurable et de la résolution de l'ADC.   
 \end{itemize}
-
+\newpage
 \section{Connexion}
-
+Une sonde de température PT100 externe peut être connectée au capteur QCM voir le chapitre~\ref{chap:temperature_sensor}.
 \begin{figure}[H]
     \begin{minipage}{0.64\textwidth}
         La fenêtre de connexion, figure~\ref{fig:connection window}, permet de connecter le capteur QCM et la sonde de température PT100.
@@ -308,7 +315,7 @@ Pour la sonde de température, le logiciel envoie une requête de mesure puis at
     \end{minipage}\hfill
     \begin{minipage}{0.30\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{assets/figures/ConnectingSuccess.png}
+        \includegraphics[width=0.8\textwidth]{assets/figures/ConnectingSuccess.png}
         \caption{Fenêtre de connexion réussie}
         \label{fig:connecting success}
     \end{minipage}
@@ -326,18 +333,18 @@ Pour la sonde de température, le logiciel envoie une requête de mesure puis at
         \label{fig:disconnect window}
     \end{minipage}
 \end{figure}
-
+\newpage
 \section{Multithreading}
 
-Le multithreading est utilisé dans le logiciel afin d'assurer la fluidité de l'interface graphique pendant les mesures.  
-\fig[H, width=\textwidth]{Diagramme décrivant la relation entre les différents threads lors de la mesure}{Thread.drawio}
+Le multithreading est utilisé dans le logiciel afin d'assurer la fluidité de l'interface graphique pendant les mesures. La figure \ref{Thread.drawio} illustre la relation entre les deux threads impliqués lors de la mesure.
+\fig[H, width=0.9\textwidth]{Diagramme décrivant la relation entre les différents threads lors de la mesure}{Thread.drawio}
 
 Le thread principal (main controller) est responsable de l'interface graphique et de la gestion des événements.  
 Le thread de mesures, quant à lui, est chargé de la communication avec le capteur QCM et la sonde de température.  
 Ce thread est lancé lorsque l'utilisateur appuie sur le bouton \textit{start}.  
 
 Le thread de mesures écrit en continu les données dans des variables de signaux, tandis que le thread principal lit ces variables à intervalles réguliers (toutes les 10 ms) afin de mettre à jour l'interface graphique.
-
+\newpage
 \section{Sauvegarde}
 
 Il a été décidé de sauvegarder les données mesurées dans un fichier lisible par l'homme (human-readable) plutôt que dans un fichier binaire.  
@@ -354,7 +361,6 @@ Les données sont organisées dans l'ordre suivant :
     \item Harmoniques mesurées
     \item Autres paramètres (Parameters)
 \end{enumerate}
-
 \subsection{Performances}
 
 Le graphe \ref{fig:LoadingPerformance} montre le temps de chargement des données en fonction de la durée de la mesure.  
@@ -418,5 +424,7 @@ La dissipation est alors calculée à partir de la largeur de bande et de la fr�
     \caption{Amplitude du quartz pour le calcul de la dissipation \cite{Edvardsson2024Dissipation}}
     \label{fig:DissipationWidth}
 \end{figure}
-\newpage
+
+Les deux méthodes de calcul de la dissipation sont équivalentes,
+car la figure \ref{fig:DissipationWidth} montre la transformation de Fourier de la figure \ref{fig:DissipationTAU} \cite{Edvardsson2024Dissipation}.
 

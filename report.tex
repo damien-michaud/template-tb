@@ -57,6 +57,10 @@
   \renewcommand{\nomentryend}{\hspace*{\fill}#1}}
 
 
+\renewcommand{\appendixname}{Annexe}
+\renewcommand{\appendixtocname}{Annexes}
+\renewcommand{\appendixpagename}{Annexes}
+
 %% Début du document
 \begin{document}
 
@@ -68,11 +72,10 @@
 \inputdir[order=natural]{frontmatter}
 
 %% Sommaire et tables
-\clearemptydoublepage
-{
-  \tableofcontents
-  \let\cleardoublepage\clearpage
-}
+
+\tableofcontents
+\let\cleardoublepage\clearpage
+
 
 
 \pagenumbering{arabic}
@@ -89,11 +92,14 @@
   \let\cleardoublepage\clearpage
   \listoftables
   \let\cleardoublepage\clearpage
-  \listoflistings
 
 \printnomenclature
 \clearemptydoublepage
+\pagenumbering{arabic}
+\chapter*{Remerciements}
+\addcontentsline{toc}{chapter}{Remerciements}
 
+Je tiens à exprimer ma gratitude au Prof. Dr. Silvia Schinke, M. Stéphane Del Rossi, Dr. Pierre-Alain Michaud, M. Samuel Reishteiner et M. Alex Yennis pour leur soutien, leurs conseils et leur accompagnement tout au long de ce travail.
 \appendix
 \appendixpage
 \addappheadtotoc
@@ -105,8 +111,6 @@
 
 \label{glossaire}
 \printnoidxglossary
-\label{index}
-\printindex
 
 \input{backmatter/colophon}
 \input{backmatter/nomenclature}

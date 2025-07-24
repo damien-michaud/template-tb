@@ -19,7 +19,7 @@ Cette technique est particulièrement utile pour la fabrication de dispositifs �
 
 Les microbalances à quartz peuvent être recouvertes d'un film d’un matériau sensible aux huiles,  
 comme le montrent les travaux de Triyana et al. \cite{triyana2019highly}, où un capteur QCM est utilisé pour détecter la présence de safrol.  
-Les capteurs ont été recouverts de nanofibres de PVAc au moyen d’un procédé d’électrofilage, ainsi que d’un film de PVAc par la méthode de \textit{spin-coating}.  
+Les capteurs ont été recouverts de nanofibres de PVAc au moyen d’un procédé d’électrofilage, ainsi que d’un film de PVAc par la méthode de spin-coating.  
 Les molécules de safrol s’attachent aux molécules de PVAc, ce qui modifie la masse adsorbée sur le cristal de quartz,  
 et donc la fréquence de résonance du cristal.
 
@@ -84,7 +84,7 @@ Dans notre cas, nous utiliserons la coupe AT, qui est la plus répandue pour les
 
 \subsection{Sensibilité du capteur QCM}
 
-Le quartz présente une sensibilité suivant une distribution gaussienne de la masse adsorbée sur la surface du cristal \cite{s22145112}.
+Le quartz présente une sensibilité de détection suivant une distribution gaussienne de la masse adsorbée sur la surface du cristal \cite{s22145112}.
 
 \begin{figure}[H]
     \centering
@@ -119,11 +119,13 @@ Il faut alors utiliser la formule de la méthode Z-match \cite{qcm100manual} :
     \cdot \tan^{-1} \left\{ Z \cdot \tan \left[ \pi \cdot \left( \frac{f_U - f_L}{f_U} \right) \right] \right\}
 \end{equation}
 
-Une autre relation permet de relier la fréquence et les propriétés du liquide :
+\subsection{Mesures en contact avec un liquide}
+Jusqu’à récemment, on pensait que l’amortissement visqueux important empêchait l’utilisation des QCM en milieu liquide. Cependant, leur fonctionnement en immersion est non seulement possible, mais reste extrêmement sensible aux variations de masse à l’interface solide-solution. Les QCM sont ainsi utilisés depuis plusieurs années pour étudier les processus chimiques et électrochimiques à la surface, même en présence de liquides ou de films viscoélastiques. Lors du contact avec un liquide, la fréquence de résonance diminue en fonction de la viscosité et de la densité du milieu. Une compréhension quantitative du comportement du résonateur est donc essentielle pour interpréter correctement les résultats. Ce phénomène a d’abord été étudié par Glassford, puis modélisé plus précisément par Kanazawa et Gordon, dont l’équation permet de prédire la variation de fréquence lors de l’immersion dans un fluide visqueux\cite{qcm100manual}.
 
-\[
-\Delta f = -f_u \cdot \frac{3}{2} \left( \frac{\rho_L \, \eta_L}{\pi \, \rho_q \, \mu_q} \right)^{1/2}
-\]
+\begin{equation}
+    \Delta f = -f_u^\frac{3}{2} \left( \frac{\rho_L \, \eta_L}{\pi \, \rho_q \, \mu_q} \right)^{1/2}
+    \label{eq:viscosity_frequency_relation}
+\end{equation}
 
 \begin{itemize}[label=\textbullet]
     \item $f_u$ : fréquence d'oscillation du cristal non chargé,
@@ -133,8 +135,7 @@ Une autre relation permet de relier la fréquence et les propriétés du liquide
     \item $\eta_L$ : viscosité du liquide en contact avec l’électrode.
 \end{itemize}
 
-\subsection{Théorie}
-
+\subsection{Modèle acoustique de films polymères viscoélastiques}
 Dans l’article de M V. Voinova et al. \cite{M_V_Voinova_1999}, les auteurs présentent un modèle décrivant la réponse acoustique de films polymères viscoélastiques déposés sur des surfaces solides dans un environnement fluide.  
 Ce modèle, basé sur l’équation des ondes, permet de calculer le décalage de la fréquence de résonance du quartz ainsi que le facteur de dissipation en fonction des propriétés viscoélastiques des couches adsorbées.
 

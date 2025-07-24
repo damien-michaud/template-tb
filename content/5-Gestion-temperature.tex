@@ -1,20 +1,20 @@
 \chapter{Gestion de la température}
 \label{chap:Gestion de la température}
 Pour réaliser les différentes expériences prévues, il est essentiel de pouvoir contrôler la température du capteur QCM.  
-La plage de température souhaitée est de 15 à 50°C, sachant que la température maximale supportée par le capteur est de 75°C \cite{manual-openqcmQ1}.
+La plage de température souhaitée est de 15°C à 50°C, sachant que la température maximale supportée par le système de QCM est de 75°C \cite{manual-openqcmQ1}.
 
 \section{Choix de la méthode de refroidissement}
 
 Plusieurs méthodes ont été envisagées :
 \begin{itemize}[label=\textbullet]
-    \item Placer le capteur dans un réfrigérateur ou un congélateur.
+    \item Placer le système de QCM dans un réfrigérateur ou un congélateur.
     \item Utiliser des modules Peltier pour créer un système de refroidissement.
     \item Faire circuler un fluide plus froid ou plus chaud que la température ambiante autour du module électrochimique via un tuyau.
 \end{itemize}
 
-La première méthode a été écartée car elle ne permet pas de contrôler précisément la température, et il existait un risque d’endommager le capteur en le refroidissant en dessous de 0°C. De plus, cette solution ne permet pas de chauffer le capteur au-delà de la température ambiante.
+La première méthode a été écartée car elle ne permet pas de contrôler précisément la température, et il existait un risque d’endommager le capteur en le refroidissant en dessous de 0°C. De plus, cette solution ne permet pas de chauffer le capteur au-delà de la température ambiante à moins de le placer dans une chambre de contrôle de température.  
 
-La seconde méthode, utilisant des modules Peltier, a été écartée en raison de la complexité de mise en œuvre, du temps limité pour ce travail, ainsi que du coût des composants.
+La seconde méthode, utilisant des modules Peltier, a été écartée en raison de la complexité de mise en œuvre, du temps limité pour ce travail, ainsi que du coût des composants. Le designe du QCM ne permet pas d’intégrer directement un module Peltier, et il faudrait concevoir un système de refroidissement externe, ce qui n’est pas réalisable dans le temps imparti.
 
 La troisième méthode a été retenue car elle est simple à mettre en œuvre, d’autant plus qu’une pompe de circulation était déjà disponible. De plus, la pompe péristaltique utilisée permet de régler le débit du fluide circulant, ce qui autorise un contrôle de la vitesse de refroidissement, et donc de la température du capteur.
 
@@ -24,7 +24,7 @@ Avant de pouvoir réaliser des mesures sur la gélatine, il est essentiel de ref
 Pour cela, un bain de glace est utilisé. Le liquide est placé dans le récipient en verre du module électrochimique.  
 Grâce à un tuyau en silicone et à une pompe péristaltique, le liquide circule autour du récipient.  
 Le tuyau est enroulé autour du récipient, formant ainsi un échangeur de chaleur.  
-Ce tuyau flexible en silicone, d’un diamètre extérieur de 4 mm, effectue quatre tours autour du récipient.  
+Ce tuyau flexible en silicone effectue quatre tours autour du récipient. Son diamètre extérieur est de 4 mm et son diamètre intérieur de 2 mm. La distance entre le capteur QCM et le bac de glace, parcourue par le tuyau, est d’environ 45 cm.
 Le tuyau est maintenu en place par un clip imprimé en 3D.
 
 \begin{figure}[H]
@@ -38,7 +38,7 @@ Le tuyau est maintenu en place par un clip imprimé en 3D.
     \item Bain de glace ou bain chauffant
     \item Pompe péristaltique
     \item Récipient en verre du module QCM
-    \item Tuyau flexible en silicone
+    \item Tuyau flexible en silicone  $\varnothing_\text{ext} = 4\,\mathrm{mm}$ et $\varnothing_\text{int} = 2\,\mathrm{mm}$
     \item Thermomètre ou sonde de température PT100
 \end{enumerate}
 

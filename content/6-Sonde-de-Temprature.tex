@@ -1,6 +1,7 @@
 \chapter{Sonde de température}
+\label{chap:temperature_sensor}
 Le capteur QCM intègre une sonde de température juste en dessous du quartz. Cependant, après avoir fait plusieurs tests avec un thermomètre, nous avons constaté que la mesure de température fournie par le capteur n'était pas toujours fiable. Des écarts de température allant jusqu'à 5 degrés Celsius ont été observés entre les deux capteurs.
-Pour remédier à ce problème, il a été décidé d'automatiser la prise de température.
+Pour remédier à ce problème, il a été décidé d’automatiser la prise de température et d’ajouter la possibilité d’utiliser un capteur de température externe, pouvant être placé directement dans le liquide en utilisant la cellule électrochimique
 
 \section{Choix du capteur de température}
 
@@ -29,7 +30,7 @@ Le choix s'est porté sur le capteur PT100 principalement pour sa précision et 
 Le capteur PT100 nécessite un conditionnement du signal pour convertir la variation de résistance en une tension mesurable.
 Le circuit de conditionnement est composé d'un pont de Wheatstone, d'un amplificateur de tension, d'un filtre passe-bas. Un microcontrôleur est ensuite utilisé pour convertir le signal analogique en numérique. Le microcontrôleur transmet également les données de température à l'ordinateur.
 
-\fig[H, width=12cm]{Schéma du circuit de conditionnement}{ShemaElec.drawio}
+\fig[H, width=12cm]{Schéma du circuit de conditionnement pour la mesure de température avec la PT100}{ShemaElec.drawio}
 
 \subsection{Pont de Wheatstone}
 Le pont de Wheatstone est un circuit utilisé pour mesurer très précisément la variation de résistance de la sonde en fonction de la température. 
@@ -44,8 +45,8 @@ L'amplificateur est configuré en mode non inverseur pour garantir que le signal
 Le gain de l'amplificateur est ajusté pour correspondre à la plage de tension acceptable par le microcontrôleur, à savoir entre 0 et 5V.
 
 \subsection{Filtre passe-bas}
-Lors des premiers tests de mesures de température, il a été constaté que le signal de température était instable.
-Chaque harmonique à laquelle le capteur vibrait donnait une température différente ; pour une harmonique donnée, la température restait stable (Figure~\ref{fig:TempBruit}).
+Lors des premiers tests de mesures de température avec la sonde PT100, il a été constaté que le signal de température était instable.
+Chaque harmonique à laquelle le QCM vibrait donnait une température différente ; pour une harmonique donnée, la température restait stable (Figure~\ref{fig:TempBruit}).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{assets/figures/TempBruit.png}
@@ -133,7 +134,7 @@ Après avoir implémenté le filtre passe-bas, les mesures de température ont d
     \label{fig:TempBruitFiltre}
 \end{figure}
 
-Les résultats sont excellents et la température est stable et ne varie pas de plus de 0,1 degré Celsius entre les différentes harmoniques.
+Les résultats sont excellents et la température est stable et ne varie pas de plus de 0,1°C entre les différentes harmoniques.
 Le filtre passe-bas a donc permis de stabiliser la mesure de température en éliminant les perturbations dues aux fréquences indésirables.
 
 \subsection{Calibration du capteur}

@@ -1,4 +1,5 @@
 \chapter{Application expérimentale}
+\label{chap:application_experimentale}
 
 Ce chapitre présente deux expériences réalisées pour explorer les capacités du capteur QCM à mesurer les propriétés physiques de différents liquides.
 
@@ -26,7 +27,7 @@ Ensuite, nous avons mesuré la viscosité de ces liquides à la même températu
         \hline
         Open QCM - Q1            & Open QCM              &   \\
         Module électrochimique   & Open QCM              &   \\
-        Quartz 10 MHz            & Open QCM              &   \\
+        Quartz 10 MHz            & Open QCM              & AT10-14-6-AU-WRAP  \\
         Bain chauffant          & Stuart                & R00199487 \\
         Pompe péristaltique     & LaerdFluid            & BQ8oS     \\
         Sonde PT100             &                       &   \\
@@ -35,6 +36,7 @@ Ensuite, nous avons mesuré la viscosité de ces liquides à la même températu
         \hline
     \end{tabular}
     \caption{Liste du matériel utilisé pour la mesure de viscosité}
+    \label{tab:MatérielViscosité}
 \end{table}
 
 \begin{table}[H]
@@ -50,6 +52,7 @@ Ensuite, nous avons mesuré la viscosité de ces liquides à la même températu
         \hline
     \end{tabular}
     \caption{Liste des produits utilisés pour la mesure de viscosité}
+    
 \end{table}
 
 \subsection{Protocole}
@@ -100,6 +103,7 @@ Le protocole suivant a été mis en place pour étudier l'influence de la tempé
     \item Analyser les variations de la fréquence de résonance et de l'amplitude en fonction de la température.
 \end{enumerate}
 
+Le quartz utilisé pour cette mesure à une fréquance de base de 10Mhz est recouvert d'or voir le tableau \ref{tab:MatérielViscosité}.
 Ce protocole permet d'observer l'effet de la température sur la réponse fréquentielle du capteur, tout en minimisant les gradients thermiques grâce à une circulation contrôlée du liquide.
 
 \subsubsection{Protocole de mesure avec le viscosimètre}
@@ -247,13 +251,14 @@ Les mesures de gélification sont utiles car elles permettent d'observer les tra
         \hline
         Open QCM - Q1             & Open QCM              &   \\
         Module électrochimique    & Open QCM              &   \\
-        Quartz 5 MHz             & Open QCM              &   \\
+        Quartz 5 MHz             & Open QCM              &   AT5-14-12-SS316-WRAP\\
         Bain chauffant            & Stuart                &  R00199487 \\
         Pompe péristaltique       & LaerdFluid            &  BQ8oS \\
         Sonde PT100               &                       &   \\
         \hline
     \end{tabular}
     \caption{Liste du matériel utilisé pour la mesure de gélification}
+    \label{tab:materielGelification}
 \end{table}
 
 \begin{table}[H]
@@ -283,6 +288,8 @@ Le protocole mis en œuvre pour étudier la gélification est le suivant :
     \item Observer les variations de la fréquence de résonance tout au long du processus de gélification.
 \end{enumerate}
 Le montage est le même que celui expliqué dans le chapitre \ref{chap:Gestion de la température}.
+
+Le quartz utilisé pour cette mesure à une fréquance de base de 5Mhz est recouvert d'acier inoxydable, voir le tableau \ref{tab:MatérielViscosité}.
 
 Les paramètres utilisés pour les mesures sont présentés sur la figure~\ref{fig:SettingsGelification}. Ces réglages correspondent à ceux utilisés pour l'acquisition des données lors de l'étude de la gélification.
 
