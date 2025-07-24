@@ -110,7 +110,7 @@ Cette perturbation est principalement due à la bande passante limitée de l'amp
 
 Pour remédier à ce problème, un filtre passe-bas a été ajouté au circuit de conditionnement du signal.
 Le filtre passe-bas est conçu pour atténuer les fréquences supérieures à 1 kHz, ce qui permet de réduire les interférences et de stabiliser la mesure de température.
-
+\newpage
 Pour déterminer la fréquence de coupure du filtre passe-bas, on utilise la formule classique reliant la résistance $R$ et la capacité $C$ du filtre RC :
 
 \begin{equation}
@@ -136,7 +136,7 @@ Après avoir implémenté le filtre passe-bas, les mesures de température ont d
 
 Les résultats sont excellents et la température est stable et ne varie pas de plus de 0,1°C entre les différentes harmoniques.
 Le filtre passe-bas a donc permis de stabiliser la mesure de température en éliminant les perturbations dues aux fréquences indésirables.
-
+\newpage
 \subsection{Calibration du capteur}
 Une calibration est nécessaire pour connaître la conversion entre la tension en sortie du circuit et la température.
 Pour ce faire, un étalonnage en utilisant un thermomètre de référence a été réalisé. La tension en sortie du circuit a été mesurée à différentes températures connues, permettant ainsi de calculer la relation entre la tension et la température, qui est linéaire dans le cas de la PT100.

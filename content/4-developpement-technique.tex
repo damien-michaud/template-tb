@@ -64,7 +64,7 @@ Le paradigme orienté objet obtient la meilleure note totale, ce qui en fait le 
 
 Ces caractéristiques sont particulièrement adaptées dans le cadre d'une application de mesures où l’on doit, à la fois gérer l’état interne de l’instrument, l’interface graphique, la communication avec le capteur et structurer le code.
 
-Bien que le paradigme fonctionnel soit intéressant pour la parallélisation ou le traitement des données, et que le paradigme procédural soit plus simple à mettre en place pour des scripts très courts, ils restent moins adaptés à la complexité et à la maintenabilité attendues dans ce projet.
+Bien que le paradigme fonctionnel soit intéressant pour la parallélisation ou le traitement des données, et que le paradigme procédural soit plus simple à mettre en place pour des scripts très courts, il reste moins adapté à la complexité et à la maintenabilité attendues dans ce projet.
 
 \subsection{Diagramme de classes}
 
@@ -73,7 +73,7 @@ La figure \ref{uml.drawio} présente le diagramme de classes du logiciel dévelo
 Chaque objet est conçu pour assumer une responsabilité bien précise, ce qui permet de structurer le code de manière claire, modulaire et évolutive. Les classes principales sont les suivantes :
 
 \begin{itemize}[label=\textbullet]
-  \item \textbf{SerialConnection}~: abstraite, contient les méthodes standard de communication série.
+  \item \textbf{SerialConnection}~: abstraite, contient les méthodes standards de communication série.
   \item \textbf{QCMSerial}~: hérite de \textbf{SerialConnection} et est responsable de l’établissement de la connexion ainsi que de la lecture des données spécifiques à une microbalance.
   \item \textbf{PT100Signal}~: hérite de \textbf{SerialConnection} et est responsable de l’établissement de la connexion ainsi que de la lecture des données spécifiques à une sonde de température PT100.
   \item \textbf{Signal}~: se charge du traitement du signal (filtrage, extraction de caractéristiques, etc.).
@@ -155,7 +155,7 @@ Les paramètres suivants peuvent être modifiés par l'utilisateur selon ses bes
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\textwidth]{assets/figures/DefaultSettings.png}
+    \includegraphics[width=0.5\textwidth]{assets/figures/DefaultSettings.png}
     \caption{Fenêtre de sélection des paramètres de mesure}
     \label{fig:paramerter window}
 \end{figure}
@@ -230,7 +230,7 @@ Pour annoncer que la mesure est terminée, le capteur envoie la température en 
 25.81;s
 \end{minted}
 
-La conversion des valeurs brutes issues de l'ADC en unités d'amplitude se fait selon l'équation~\ref{eq:adc_conversion_Amplitude}, et la conversion de la phase selon l'équation~\ref{eq:adc_conversion_phase}.
+La conversion des valeurs brutes issues de l'ADC en unité d'amplitude (dB) se fait selon l'équation~\ref{eq:adc_conversion_Amplitude}, et la conversion de la phase selon l'équation~\ref{eq:adc_conversion_phase}.
 
 \begin{equation}
 A_i = \frac{\left( \left( x_i \times \frac{k}{2} \right) - V_{\text{CP}} \right)}{0.03}

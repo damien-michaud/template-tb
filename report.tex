@@ -69,18 +69,18 @@
 \frontmatter
 \clearemptydoublepage
 
+% Ajout de l'inclusion du frontmatter
 \inputdir[order=natural]{frontmatter}
 
 %% Sommaire et tables
+\clearemptydoublepage
+{
+  \tableofcontents
+}
 
-\tableofcontents
-\let\cleardoublepage\clearpage
-
-
-
+\printnomenclature
+\clearemptydoublepage
 \pagenumbering{arabic}
-
-%% Contenu
 \mainmatter
 
 \inputdir[order=natural]{content}

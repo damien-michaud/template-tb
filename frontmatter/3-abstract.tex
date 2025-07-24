@@ -1,0 +1,15 @@
+\begin{abstract}
+Les microbalances à cristal de quartz (QCM) sont généralement utilisées comme capteur de précision pour détecter des très faibles variations de mass des particules adsorbées à la surface du cristal. La mesure est réalisée par la mesure de la variation de la fréquence de résonance du cristal. La fréquence de résonance du quartz est aussi altérée par le milieu dans lequel il vibre.
+
+L’objectif de ce projet est d’adapter une QCM pour caractériser des liquides et des gels.
+
+Pour ce projet une QCM (OpenQCM-Q1) a été adaptée, utilisant des cristaux de 5 MHz et 10 MHz. Le projet a été réalisé au Laboratoire d’Applications des NanoSciences (COMATEC-LANS) à la HEIG-VD. Pour caractériser des liquides et des gels à différentes températures, le réservoir d’une cellule électrochimique est utilisé et un échangeur de chaleur à débit réglable a été conçue. Le ratio signal/bruit d’une sonde de température, proche du quartz, a été assuré par un circuit de filtre passe-bas. Le logiciel pour l’acquisition et la visualisation des mesures, AppQCM, a été développé en Python et a des fonctionnalités suivantes:
+\begin{itemize}[label=\textbullet]
+\item Calibration par balayage spectrale rapide (identification de la fréquence de résonance et des harmoniques).
+\item Choix de l’échantillonnage et plages fréquentielles autour des résonances et harmoniques
+\item Affichages (amplitude, phase, température).
+\item Exportation des données
+\item Des expériences de test et de validation ont été réalisées. En mesurant plusieurs liquides en fonction de la température une relation généralisée a pu être établie entre la fréquence de resonance et la viscosité (Démonstration 1). La gélification de la gélatine bovine a pu être mesurée (Démonstration 2).
+\end{itemize}
+En conclusion, la QCM a été complétée par un contrôle de température. Le traitement électronique du signal et le logiciel AppQCM développés pour les mesures QCM ont été validés avec succès. Le système permet d’analyser la viscosité des liquides (Démo 1) en fonction de la température, ainsi que la gélification de gels (Démo 2).
+\end{abstract}

@@ -13,7 +13,7 @@ La seconde expérience porte sur la mesure de la gélification de la gélatine b
 
 Cette expérience vise à rechercher expérimentalement la relation entre la viscosité d'un liquide et la fréquence ainsi que l'amplitude de résonance d'un quartz.
 
-Pour cette expérience, nous avons utilisé une microbalance à quartz pour mesurer la réponse fréquentielle de chaque liquide à différentes températures.
+Pour cette expérience, nous avons utilisé la microbalance à quartz pour mesurer la réponse fréquentielle de chaque liquide à différentes températures.
 
 Ensuite, nous avons mesuré la viscosité de ces liquides à la même température à l'aide d'un viscosimètre.
 
@@ -118,7 +118,7 @@ Pour la mesure de la viscosité à l'aide du viscosimètre, la température de c
 \end{itemize}
 
 Pour chaque palier, une mesure de viscosité est réalisée une fois que la température de l'échantillon est stable. Ce protocole permet d'obtenir la courbe de viscosité en fonction de la température pour chaque liquide testé.
-
+\newpage
 \subsection{Résultats}
 
 Pour tous les résultats obtenus au moyen du capteur QCM, la troisième à harmonique (à 30Mhz) a été choisie car elle offre le meilleur signal. Les résultats de l'expérience se composent premièrement des mesures d'amplitude et de fréquence obtenues avec le capteur QCM, ainsi que de la température mesurée par la sonde PT100.  
@@ -136,7 +136,7 @@ La pente augmente lorsque l'amplitude de l'échantillon est plus petite.
 
 On observe également une hystérésis pour chaque mesure. L'impact de celle-ci peut être réduit si la température varie plus lentement.  
 Cette hystérésis n'est pas inattendue : le capteur de température PT100 ne mesure pas la température à la surface du quartz, mais celle du liquide dans la cellule de mesure, quelques millimètres au-dessus de la surface du quartz.
-
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/Frequ-Temperature.png}
@@ -153,7 +153,7 @@ Les échantillons ayant la fréquence la plus élevée, comme l'eau et l'éthano
 
 L’étape suivante consiste à mettre en relation la viscosité des échantillons avec l’amplitude et la fréquence de résonance.  
 Pour chaque mesure de viscosité réalisée avec le viscosimètre, la température est enregistrée. Ensuite, pour chaque mesure, une amplitude ou une fréquence mesurée à la température la plus proche est associée.
-
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/Amplitude-viscosite.png}
@@ -168,7 +168,7 @@ On remarque aussi que, pour chaque échantillon, les amplitudes sont alignées a
 
 Les échantillons avec les viscosités les plus faibles, l'eau et l'éthanol, présentent une pente presque verticale, ce qui signifie que l'amplitude de résonance est très sensible à la viscosité.  
 La pente de l'échantillon avec la viscosité la plus élevée, l'huile moteur, est proche de zéro.
-
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/frequency-viscosity.png}
@@ -180,7 +180,7 @@ Le graphique \ref{fig:Frequence VS Viscosité} présente la différence de fréq
 Comme pour l'amplitude (figure \ref{fig:Amplitude VS Viscosité}), on constate que la différence de fréquence diminue avec l'augmentation de la viscosité.
 
 Les pentes des fréquences suivent la même tendance que celles des amplitudes : les échantillons avec les viscosités les plus faibles ont des pentes plus importantes que ceux avec des viscosités plus élevées, bien que ces pentes soient moins marquées.
-
+\newpage
 \subsection{Discussion des résultats}
 
 Les résultats sont très intéressants dans la mesure où, une fois le modèle mathématique de la relation entre viscosité et signal de résonance déterminé, il sera possible de mesurer la viscosité d’un liquide par la simple mesure de l’amplitude de résonance du capteur QCM.  
@@ -205,7 +205,7 @@ Il n’est pas clair si cela est dû à une erreur de mesure ou à un autre phé
 
 Le second est que les échantillons avec la viscosité la plus faible sont tellement rapprochés qu’il est difficile de distinguer les points à cette échelle.  
 La figure \ref{fig:Frequence carré VS Viscosité Zoom} présente un zoom sur la partie gauche du graphique, où se situent les échantillons à viscosités faibles.
-
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/FrequViscZoom.png}
@@ -220,23 +220,23 @@ Il faudra réaliser plus de mesures pour confirmer cette hypothèse, en utilisan
 Les deux graphiques précédents affichent aussi la courbe que devrait donner le modèle théorique.  
 L'écart est conséquent avec la régression calculée.  
 Il est possible que cela soit dû aux caractéristiques du quartz, car pour calculer le modèle théorique, les caractéristiques fournies par le fabricant ont été utilisées.
-
+\newpage
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/loglog.png}
-    \caption{Représentation de $\Delta f^2$ en fonction de la viscosité des différents échantillons sur une échelle logarithmique}
+    \caption{Représentation de l'amplitude $A$ en fonction de la viscosité des différents échantillons sur une échelle logarithmique}
     \label{fig:loglog}
 \end{figure}
 
 La figure \ref{fig:loglog} présente l’amplitude de la réponse en fréquence en fonction de la viscosité des différents échantillons, sur une échelle logarithmique.  
 Un ajustement a été réalisé, de la forme suivante :
 \begin{equation}
-    \Delta \log(f) = a \cdot \log(\eta)^2 + b \cdot \log(\eta) + c
+    \log(A) = a \cdot \log(\eta)^2 + b \cdot \log(\eta) + c
 \end{equation}
 
 Cette forme ne correspond à aucune des équations connues décrivant la relation entre viscosité et fréquence de résonance.  
 Cependant, elle permet tout de même de prédire l’amplitude d’une mesure.
-
+\newpage
 \section{Gélification}
 
 Les mesures de gélification sont utiles car elles permettent d'observer les transitions de phase d’un état liquide vers un état gélatineux. La gélatine bovine est utilisée car ses changements de phase se produisent à des températures proches de la température ambiante, ce qui correspond bien à la plage de fonctionnement du capteur QCM.
@@ -290,7 +290,7 @@ Le protocole mis en œuvre pour étudier la gélification est le suivant :
 Le montage est le même que celui expliqué dans le chapitre \ref{chap:Gestion de la température}.
 
 Le quartz utilisé pour cette mesure à une fréquance de base de 5Mhz est recouvert d'acier inoxydable, voir le tableau \ref{tab:MatérielViscosité}.
-
+\newpage
 Les paramètres utilisés pour les mesures sont présentés sur la figure~\ref{fig:SettingsGelification}. Ces réglages correspondent à ceux utilisés pour l'acquisition des données lors de l'étude de la gélification.
 
 \begin{figure}[H]
@@ -299,7 +299,7 @@ Les paramètres utilisés pour les mesures sont présentés sur la figure~\ref{f
     \caption{Paramètres de mesure utilisés pour la gélification}
     \label{fig:SettingsGelification}
 \end{figure}
-
+\newpage
 \subsection{Résultats}
 
 Les résultats de la mesure de la gélification sont présentés dans la figure \ref{fig:Frequence gelification}. Ils se trouvent à la troisième harmonique du cristal (15 MHz) car c'est la que se trouve le signal le plus propre. 
@@ -314,11 +314,11 @@ Une fois que le liquide a atteint sa température minimale et que de l'eau chaud
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{assets/figures/gel.png}
+    \includegraphics[width=0.9\textwidth]{assets/figures/gel.png}
     \caption{Fréquence de résonance en fonction de la température pour la mesure de la gélification}
     \label{fig:Frequence gelification}
 \end{figure}
-
+\newpage
 \subsection{Discussion des résultats}
 
 En comparant avec les données de la littérature \cite{SHA2019163}, la température de gélification varie entre 5 °C et 20 °C, tandis que la température de fusion se situe entre 20 °C et 30 °C. Ces données ont été mesurées avec de la gélatine porcine. En effet, la température d’extraction, parmi d’autres variables, a un impact sur la température de solidification.

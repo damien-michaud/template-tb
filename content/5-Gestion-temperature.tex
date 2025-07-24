@@ -18,32 +18,8 @@ La seconde méthode, utilisant des modules Peltier, a été écartée en raison 
 
 La troisième méthode a été retenue car elle est simple à mettre en œuvre, d’autant plus qu’une pompe de circulation était déjà disponible. De plus, la pompe péristaltique utilisée permet de régler le débit du fluide circulant, ce qui autorise un contrôle de la vitesse de refroidissement, et donc de la température du capteur.
 
-\section{Schéma de montage}
 
-Avant de pouvoir réaliser des mesures sur la gélatine, il est essentiel de refroidir le liquide à une température inférieure à 20°C pour initier la gélification.  
-Pour cela, un bain de glace est utilisé. Le liquide est placé dans le récipient en verre du module électrochimique.  
-Grâce à un tuyau en silicone et à une pompe péristaltique, le liquide circule autour du récipient.  
-Le tuyau est enroulé autour du récipient, formant ainsi un échangeur de chaleur.  
-Ce tuyau flexible en silicone effectue quatre tours autour du récipient. Son diamètre extérieur est de 4 mm et son diamètre intérieur de 2 mm. La distance entre le capteur QCM et le bac de glace, parcourue par le tuyau, est d’environ 45 cm.
-Le tuyau est maintenu en place par un clip imprimé en 3D.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{assets/figures/Pump TB.png}
-    \caption{Schéma de refroidissement du module QCM}
-    \label{fig:Shema_glacière}
-\end{figure}
-
-\begin{enumerate}
-    \item Bain de glace ou bain chauffant
-    \item Pompe péristaltique
-    \item Récipient en verre du module QCM
-    \item Tuyau flexible en silicone  $\varnothing_\text{ext} = 4\,\mathrm{mm}$ et $\varnothing_\text{int} = 2\,\mathrm{mm}$
-    \item Thermomètre ou sonde de température PT100
-\end{enumerate}
-
-Pour chauffer le mélange lorsque la température doit être supérieure à la température ambiante, le bain de glace est remplacé par un bain chauffant réglable.
-
+\newpage
 \section{Maintien du tuyau}
 
 Pour maintenir le tuyau en place, un clip a été conçu et imprimé en 3D.  
@@ -53,10 +29,19 @@ Les clips ont été imprimés en ABS afin de résister à la chaleur.
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{assets/figures/ATACHE TUBE V2.png}
-    \caption{Clip de maintien du tuyau autour du récipient}
+    \caption{Clip de maintien du tuyau représentation 3D}
     \label{fig:Clip_tuyau}
 \end{figure}
 
+La figure \ref{fig:Clip_tuyau_photo} montre le clip imprimé en 3D, qui est utilisé pour maintenir le tuyau autour du récipient.
+Le tuyau est enroulé 4 fois autour du récipient pour former un échangeur de chaleur, permettant ainsi de contrôler la température du capteur QCM.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/figures/ClipPhoto.png}
+    \caption{Clip de maintien du tuyau autour du récipient}
+    \label{fig:Clip_tuyau_photo}
+\end{figure}
+\newpage
 \section{Isolation thermique}
 
 Un isolant thermique composé de papier bulle et de scotch est utilisé pour envelopper le récipient en verre, afin de réduire au maximum les pertes thermiques par convection entre le récipient et l’air ambiant.
@@ -75,6 +60,37 @@ Un isolant thermique composé de papier bulle et de scotch est utilisé pour env
         \caption{Intérieur de l'isolant thermique}
         \label{fig:Interieur_Isolant}
     \end{minipage}
+\end{figure}
+\newpage
+\section{Schéma de montage}
+
+Le montage comprend un bain de glace pour refroidir  l’échantillon (figure \ref{fig:Shema_glacière}) ou un bain chauffant réglable pour chauffer l’échantillon.
+Le liquide est placé dans le récipient en verre du module électrochimique.
+Grâce à un tuyau en silicone et à une pompe péristaltique, le liquide circule autour du récipient.
+Le tuyau est enroulé autour du récipient, formant ainsi un échangeur de chaleur.
+Ce tuyau flexible en silicone effectue quatre tours autour du récipient. Son diamètre extérieur est de 4 mm et son diamètre intérieur de 2 mm. La distance entre le capteur QCM et le bac de glace, parcourue par le tuyau, est d’environ 45 cm.
+Le tuyau est maintenu en place par les clips imprimés en 3D.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{assets/figures/Pump TB.png}
+    \caption{Schéma de refroidissement du module QCM}
+    \label{fig:Shema_glacière}
+\end{figure}
+
+\begin{enumerate}
+    \item Bain de glace ou bain chauffant
+    \item Pompe péristaltique
+    \item Récipient en verre du module QCM
+    \item Tuyau flexible en silicone  $\varnothing_\text{ext} = 4\,\mathrm{mm}$ et $\varnothing_\text{int} = 2\,\mathrm{mm}$
+    \item Thermomètre ou sonde de température PT100
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/figures/PhotoMontage.png}
+    \caption{Montage du système de gestion de la température du module QCM}
+    \label{fig:Photo_Montage}
 \end{figure}
 
 \section{Analyse des performances}

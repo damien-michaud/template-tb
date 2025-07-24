@@ -331,7 +331,7 @@
   heightrounded,
   includehead]{geometry}
 
-\definecolor{linkcolor}{RGB}{130, 22, 69}
+\definecolor{linkcolor}{RGB}{0, 102, 204}
 \RequirePackage[
   colorlinks=true,
   plainpages=false,

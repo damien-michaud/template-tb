@@ -1,0 +1,32 @@
+\chapter{Code Arduino PT100}
+
+\begin{lstlisting}[language=C++, caption={Arduino code for PT100 temperature sensor}]
+const int sensorPin = A0;  // Analog pin connected to PT100 circuit
+const float Vref = 5.0;    // Reference voltage (typically 5V or 3.3V)
+const int ADCmax = 1023;   // 10-bit ADC
+
+void setup() {
+    Serial.begin(9600);  // Start Serial communication
+}
+
+void loop() {
+    if (Serial.available() > 0) {  // Check if data is available in Serial
+        String command = Serial.readStringUntil('\n'); // Read the command
+        command.trim();  // Remove any leading/trailing spaces
+
+        if (command == "GET_TEMP") {  // If command matches expected input
+            int rawValue = analogRead(sensorPin); // Read raw ADC value
+            float voltage = (rawValue / (float)ADCmax) * Vref; // Convert to voltage
+            float temperature = convertVoltageToTemperature(voltage); // Convert to temperature
+
+            Serial.println(temperature, 2); // Send temperature as response
+        }
+    }
+}
+
+// Replace with your own conversion formula based on your circuit
+float convertVoltageToTemperature(float voltage) {
+    // Example: linear approximation
+    return voltage * 22.97 - 5.90;
+}
+\end{lstlisting}
